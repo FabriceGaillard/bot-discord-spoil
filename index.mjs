@@ -43,7 +43,14 @@ function shouldRandomReply() {
 
 function hasPriorityKeyword(content) {
   const text = normalize(content);
-  return text.includes('petit ratou') || text.includes('lemon slug');
+
+  // tout ce qui ressemble à rat / ratou / raton
+  const ratRegex = /\br+a+t+o*u*n*\b/;
+
+  // lemon + snug/slug, lettres étirées acceptées
+  const lemonRegex = /\bl+e+m+o+n+.*(s+n+u+g+|s+l+u+g+)\b/;
+
+  return ratRegex.test(text) || lemonRegex.test(text);
 }
 
 // ======================
