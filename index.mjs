@@ -5,7 +5,7 @@ import 'dotenv/config';
 // CONFIG
 // ======================
 const TOKEN = process.env.DISCORD_TOKEN;
-const CHANNEL_ID = '1066475349669576806';
+const CHANNEL_ID = process.env.CHANNEL_ID;
 
 if (!TOKEN) {
   console.error('DISCORD_TOKEN manquant');
